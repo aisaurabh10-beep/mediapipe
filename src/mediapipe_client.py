@@ -121,15 +121,22 @@ class MediaPipeClient:
                 return None, 0.0, 0.0, 0.0
                 
             response = pickle.loads(response_data)
-            
-            if len(response) == 5 and isinstance(response[4], str):
-                _aligned, _y, _p, _r, err_msg = response
+
+            if len(response) == 6:
+                _aligned, _y, _p, _r, _ar, err_msg = response
                 logger.warning(f"MediaPipe worker returned an error: {err_msg}")
-                return None, 0.0, 0.0, 0.0, 0.0
+                return None, 0.0, 0.0, 0.0, 0.0 # Return the 5-item failure tuple
+            
+            if len(response) == 5 :
+                if isinstance(response[4], str):
+                    _aligned, _y, _p, _r, err_msg = response
+                    logger.warning(f"MediaPipe worker returned an error: {err_msg}")
+                    return None, 0.0, 0.0, 0.0, 0.0
                 
-            if len(response) == 5:
+   
                 aligned_face, yaw, pitch, roll, aspect_ratio = response
                 return aligned_face, yaw, pitch, roll, aspect_ratio
+            
             else: # Fallback for old 4-tuple
                 aligned_face, yaw, pitch, roll = response
                 return aligned_face, yaw, pitch, roll, 1.0 # Return "passing" ratio
