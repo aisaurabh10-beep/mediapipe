@@ -1,160 +1,3 @@
-# import cv2
-# import numpy as np
-# import logging
-
-# logger = logging.getLogger(__name__)
-
-# class FaceValidator:
-#     """
-#     Simple geometric validator that doesn't rely on pose angles.
-#     Uses aspect ratio + brightness distribution to detect non-frontal faces.
-#     """
-    
-#     @staticmethod
-#     def validate_aspect_ratio(aligned_face_bgr, min_ratio=1.15, max_ratio=2.0):
-#         """
-#         Check if face has proper height/width ratio.
-#         Looking down = squashed face (ratio < 1.15)
-#         Looking up = elongated face (ratio > 2.0)
-#         """
-#         h, w = aligned_face_bgr.shape[:2]
-#         ratio = h / w
-        
-#         if ratio < min_ratio:
-#             return False, f"Face too wide (AR={ratio:.2f}, looking down?)"
-#         if ratio > max_ratio:
-#             return False, f"Face too tall (AR={ratio:.2f}, looking up?)"
-        
-#         return True, f"Aspect ratio OK ({ratio:.2f})"
-    
-#     @staticmethod
-#     def validate_brightness_distribution(aligned_face_bgr):
-#         """
-#         Check if brightness is evenly distributed.
-        
-#         When looking down:
-#         - Top of head (dark hair) dominates
-#         - Bottom half is darker (shadow under face)
-        
-#         When looking straight:
-#         - Face is evenly lit
-#         """
-#         gray = cv2.cvtColor(aligned_face_bgr, cv2.COLOR_BGR2GRAY)
-#         h, w = gray.shape
-        
-#         # Split into top and bottom halves
-#         top_half = gray[:h//2, :]
-#         bottom_half = gray[h//2:, :]
-        
-#         top_mean = np.mean(top_half)
-#         bottom_mean = np.mean(bottom_half)
-        
-#         # For a frontal face, top and bottom should be similar
-#         # (eyes/forehead vs nose/mouth/chin)
-#         brightness_ratio = top_mean / (bottom_mean + 1e-6)
-        
-#         # RELAXED: Allow more variation in lighting
-#         if brightness_ratio > 1.6 or brightness_ratio < 0.6:
-#             return False, f"Uneven brightness (ratio={brightness_ratio:.2f})"
-        
-#         return True, f"Brightness OK ({brightness_ratio:.2f})"
-    
-#     @staticmethod
-#     def validate_edge_density(aligned_face_bgr):
-#         """
-#         Frontal faces have edges (features) distributed across the face.
-#         Side/down faces have fewer edges or concentrated edges.
-#         """
-#         gray = cv2.cvtColor(aligned_face_bgr, cv2.COLOR_BGR2GRAY)
-        
-#         # Detect edges
-#         edges = cv2.Canny(gray, 50, 150)
-        
-#         # Count edge pixels
-#         edge_density = np.sum(edges > 0) / edges.size
-        
-#         # RELAXED: Accept wider range of edge densities
-#         if edge_density < 0.02:
-#             return False, f"Too few features ({edge_density*100:.1f}% edges)"
-#         if edge_density > 0.35:
-#             return False, f"Too many edges ({edge_density*100:.1f}%)"
-        
-#         return True, f"Edge density OK ({edge_density*100:.1f}%)"
-    
-#     @staticmethod
-#     def validate_face_symmetry(aligned_face_bgr):
-#         """
-#         Check if face is symmetric (left/right).
-#         Side poses are highly asymmetric.
-#         """
-#         gray = cv2.cvtColor(aligned_face_bgr, cv2.COLOR_BGR2GRAY)
-#         h, w = gray.shape
-        
-#         # Split into left and right halves
-#         mid = w // 2
-#         left_half = gray[:, :mid]
-#         right_half = gray[:, mid:w]
-        
-#         # Flip right half
-#         right_flipped = cv2.flip(right_half, 1)
-        
-#         # Resize to match if needed
-#         if left_half.shape[1] != right_flipped.shape[1]:
-#             min_width = min(left_half.shape[1], right_flipped.shape[1])
-#             left_half = left_half[:, :min_width]
-#             right_flipped = right_flipped[:, :min_width]
-        
-#         # Calculate difference
-#         diff = cv2.absdiff(left_half, right_flipped)
-#         symmetry_score = 1.0 - (np.mean(diff) / 255.0)
-        
-#         # RELAXED: Lower threshold for symmetry
-#         if symmetry_score < 0.5:
-#             return False, f"Face not symmetric ({symmetry_score:.2f})"
-        
-#         return True, f"Symmetry OK ({symmetry_score:.2f})"
-    
-#     @staticmethod
-#     def comprehensive_validation(aligned_face_bgr, mp_aspect_ratio=None):
-#         """
-#         Runs all validation checks.
-#         Returns: (is_valid, failure_reason)
-        
-#         Args:
-#             aligned_face_bgr: The aligned face image
-#             mp_aspect_ratio: Optional MediaPipe's aspect ratio (more reliable than image dimensions)
-#         """
-#         # Check 1: Aspect Ratio - Use MediaPipe's if available
-#         if mp_aspect_ratio is not None:
-#             # MediaPipe's aspect ratio is more reliable
-#             if mp_aspect_ratio < 1.15:
-#                 return False, f"Face too wide (AR={mp_aspect_ratio:.2f}, looking down?)"
-#             if mp_aspect_ratio > 2.0:
-#                 return False, f"Face too tall (AR={mp_aspect_ratio:.2f})"
-#         else:
-#             # Fallback to image dimensions
-#             ar_ok, ar_msg = FaceValidator.validate_aspect_ratio(aligned_face_bgr)
-#             if not ar_ok:
-#                 return False, ar_msg
-        
-#         # Check 2: Brightness Distribution
-#         brightness_ok, brightness_msg = FaceValidator.validate_brightness_distribution(aligned_face_bgr)
-#         if not brightness_ok:
-#             return False, brightness_msg
-        
-#         # Check 3: Edge Density (optional but helpful)
-#         edge_ok, edge_msg = FaceValidator.validate_edge_density(aligned_face_bgr)
-#         if not edge_ok:
-#             return False, edge_msg
-        
-#         # Check 4: Symmetry (can be strict)
-#         symmetry_ok, symmetry_msg = FaceValidator.validate_face_symmetry(aligned_face_bgr)
-#         if not symmetry_ok:
-#             return False, symmetry_msg
-        
-#         return True, "All geometric checks passed"
-
-
 import cv2
 import numpy as np
 import logging
@@ -163,150 +6,140 @@ logger = logging.getLogger(__name__)
 
 class FaceValidator:
     """
-    Simple geometric validator that doesn't rely on pose angles.
-    Uses aspect ratio + brightness distribution to detect non-frontal faces.
+    Geometric validator that checks if a face is frontal and suitable for recognition.
+    Uses aspect ratio, brightness distribution, edge density, and symmetry.
     """
-    
-    @staticmethod
-    def validate_aspect_ratio(aligned_face_bgr, min_ratio=1.15, max_ratio=2.0):
-        """
-        Check if face has proper height/width ratio.
-        Looking down = squashed face (ratio < 1.15)
-        Looking up = elongated face (ratio > 2.0)
-        """
-        h, w = aligned_face_bgr.shape[:2]
-        ratio = h / w
-        
-        if ratio < min_ratio:
-            return False, f"Face too wide (AR={ratio:.2f}, looking down?)"
-        if ratio > max_ratio:
-            return False, f"Face too tall (AR={ratio:.2f}, looking up?)"
-        
-        return True, f"Aspect ratio OK ({ratio:.2f})"
     
     @staticmethod
     def validate_brightness_distribution(aligned_face_bgr):
         """
-        Check if brightness is evenly distributed.
-        
-        When looking down:
-        - Top of head (dark hair) dominates
-        - Bottom half is darker (shadow under face)
-        
-        When looking straight:
-        - Face is evenly lit
+        Check if brightness is evenly distributed across face regions.
+        Detects when top-of-head (hair) is visible vs actual face.
         """
         gray = cv2.cvtColor(aligned_face_bgr, cv2.COLOR_BGR2GRAY)
         h, w = gray.shape
         
-        # Split into top and bottom halves
-        top_half = gray[:h//2, :]
-        bottom_half = gray[h//2:, :]
+        # Split into THREE sections
+        top_third = gray[:h//3, :]        # Forehead/hair region
+        middle_third = gray[h//3:2*h//3, :]  # Eyes/nose region
+        bottom_third = gray[2*h//3:, :]   # Mouth/chin region
         
-        top_mean = np.mean(top_half)
-        bottom_mean = np.mean(bottom_half)
+        top_mean = np.mean(top_third)
+        middle_mean = np.mean(middle_third)
+        bottom_mean = np.mean(bottom_third)
         
-        # For a frontal face, top and bottom should be similar
-        # (eyes/forehead vs nose/mouth/chin)
-        brightness_ratio = top_mean / (bottom_mean + 1e-6)
+        top_to_middle = top_mean / (middle_mean + 1e-6)
+        middle_to_bottom = middle_mean / (bottom_mean + 1e-6)
         
-        # RELAXED: Allow more variation in lighting
-        if brightness_ratio > 1.4 or brightness_ratio < 0.7:
-            return False, f"Uneven brightness (ratio={brightness_ratio:.2f})"
+        # Looking down: dark hair on top, face in middle/bottom
+        if top_to_middle < 0.65:
+            return False, f"Dark top (ratio={top_to_middle:.2f})"
         
-        return True, f"Brightness OK ({brightness_ratio:.2f})"
+        # Looking down: face foreshortened, bright middle
+        if middle_to_bottom > 1.8:
+            return False, f"Bright middle (ratio={middle_to_bottom:.2f})"
+        
+        # Looking up: rare but check anyway
+        if middle_to_bottom < 0.6:
+            return False, f"Dark middle (ratio={middle_to_bottom:.2f})"
+        
+        return True, f"Brightness OK"
     
     @staticmethod
     def validate_edge_density(aligned_face_bgr):
         """
-        Frontal faces have edges (features) distributed across the face.
-        Side/down faces have fewer edges or concentrated edges.
+        Frontal faces have consistent edge distribution.
+        Too few edges = featureless (side view or blur)
+        Too many edges = noise or bad alignment
         """
         gray = cv2.cvtColor(aligned_face_bgr, cv2.COLOR_BGR2GRAY)
         
-        # Detect edges
         edges = cv2.Canny(gray, 50, 150)
-        
-        # Count edge pixels
         edge_density = np.sum(edges > 0) / edges.size
         
-        # RELAXED: Accept wider range of edge densities
         if edge_density < 0.02:
-            return False, f"Too few features ({edge_density*100:.1f}% edges)"
+            return False, f"Too few features ({edge_density*100:.1f}%)"
         if edge_density > 0.35:
-            return False, f"Too many edges ({edge_density*100:.1f}%)"
+            return False, f"Too noisy ({edge_density*100:.1f}%)"
         
-        return True, f"Edge density OK ({edge_density*100:.1f}%)"
+        return True, f"Edges OK"
     
     @staticmethod
     def validate_face_symmetry(aligned_face_bgr):
         """
-        Check if face is symmetric (left/right).
-        Side poses are highly asymmetric.
+        Check left/right symmetry. Side poses fail this check.
         """
         gray = cv2.cvtColor(aligned_face_bgr, cv2.COLOR_BGR2GRAY)
         h, w = gray.shape
         
-        # Split into left and right halves
         mid = w // 2
         left_half = gray[:, :mid]
         right_half = gray[:, mid:w]
         
-        # Flip right half
         right_flipped = cv2.flip(right_half, 1)
         
-        # Resize to match if needed
+        # Ensure same dimensions
         if left_half.shape[1] != right_flipped.shape[1]:
             min_width = min(left_half.shape[1], right_flipped.shape[1])
             left_half = left_half[:, :min_width]
             right_flipped = right_flipped[:, :min_width]
         
-        # Calculate difference
         diff = cv2.absdiff(left_half, right_flipped)
         symmetry_score = 1.0 - (np.mean(diff) / 255.0)
         
-        # RELAXED: Lower threshold for symmetry
         if symmetry_score < 0.5:
-            return False, f"Face not symmetric ({symmetry_score:.2f})"
+            return False, f"Not symmetric ({symmetry_score:.2f})"
         
-        return True, f"Symmetry OK ({symmetry_score:.2f})"
+        return True, f"Symmetric OK"
     
     @staticmethod
-    def comprehensive_validation(aligned_face_bgr, mp_aspect_ratio=None):
+    def comprehensive_validation(aligned_face_bgr):
         """
-        Runs all validation checks.
+        Runs all validation checks with smart decision logic.
         Returns: (is_valid, failure_reason)
-        
-        Args:
-            aligned_face_bgr: The aligned face image
-            mp_aspect_ratio: Optional MediaPipe's aspect ratio (more reliable than image dimensions)
         """
-        # Check 1: Aspect Ratio - Use MediaPipe's if available
-        if mp_aspect_ratio is not None:
-            # MediaPipe's aspect ratio is more reliable
-            if mp_aspect_ratio < 1.25:
-                return False, f"Face too wide (AR={mp_aspect_ratio:.2f}, looking down?)"
-            if mp_aspect_ratio > 2.0:
-                return False, f"Face too tall (AR={mp_aspect_ratio:.2f})"
-        else:
-            # Fallback to image dimensions
-            ar_ok, ar_msg = FaceValidator.validate_aspect_ratio(aligned_face_bgr)
-            if not ar_ok:
-                return False, ar_msg
+        # Check 0: Minimum face size
+        h, w = aligned_face_bgr.shape[:2]
+        if h < 80 or w < 80:
+            return False, f"Too small ({w}x{h})"
         
-        # Check 2: Brightness Distribution
+        # Check 1: Aspect Ratio - More permissive now
+        image_aspect_ratio = h / w
+        
+        if image_aspect_ratio < 1.10:
+            return False, f"Too wide (AR={image_aspect_ratio:.2f})"
+        if image_aspect_ratio > 2.0:
+            return False, f"Too tall (AR={image_aspect_ratio:.2f})"
+        
+        # Check 2: Brightness Distribution (Critical for detecting looking down)
         brightness_ok, brightness_msg = FaceValidator.validate_brightness_distribution(aligned_face_bgr)
+        
+        # Check 3: Edge Density
+        edge_ok, edge_msg = FaceValidator.validate_edge_density(aligned_face_bgr)
+        
+        # Check 4: Symmetry
+        symmetry_ok, symmetry_msg = FaceValidator.validate_face_symmetry(aligned_face_bgr)
+        
+        # SMART LOGIC: If AR is borderline (1.10-1.20), require at least 2 other checks to pass
+        if image_aspect_ratio < 1.20:
+            checks_passed = sum([brightness_ok, edge_ok, symmetry_ok])
+            if checks_passed < 2:
+                # Find which check failed
+                if not brightness_ok:
+                    return False, f"Low AR + {brightness_msg}"
+                if not edge_ok:
+                    return False, f"Low AR + {edge_msg}"
+                if not symmetry_ok:
+                    return False, f"Low AR + {symmetry_msg}"
+        
+        # For normal AR (≥1.20), apply standard checks
         if not brightness_ok:
             return False, brightness_msg
         
-        # Check 3: Edge Density (optional but helpful)
-        edge_ok, edge_msg = FaceValidator.validate_edge_density(aligned_face_bgr)
         if not edge_ok:
             return False, edge_msg
         
-        # Check 4: Symmetry (can be strict)
-        symmetry_ok, symmetry_msg = FaceValidator.validate_face_symmetry(aligned_face_bgr)
         if not symmetry_ok:
             return False, symmetry_msg
         
-        return True, "All geometric checks passed"
+        return True, f"Valid (AR={image_aspect_ratio:.2f})"

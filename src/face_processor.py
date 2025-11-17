@@ -2,15 +2,11 @@ import cv2
 import numpy as np
 import logging
 from deepface import DeepFace
-import os
 
 logger = logging.getLogger(__name__)
 
 class FaceProcessor:
     def __init__(self, config):
-        self.debug_path = config.get('Paths', 'debug_aligned_faces_path')
-        self.debug_enabled = config.getboolean('Logging', 'debug_save_faces', fallback=True)
-        self.clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
         self.arcface_model = "ArcFace"
         
         # Warm up the model
@@ -32,38 +28,20 @@ class FaceProcessor:
             image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         return cv2.Laplacian(image, cv2.CV_64F).var()
 
-    def preprocess(self, face_image_bgr, tracker_id, frame_num):
-        """Applies CLAHE and saves debug images."""
-        
-        # 1. Convert to grayscale for CLAHE
-        face_gray = cv2.cvtColor(face_image_bgr, cv2.COLOR_BGR2GRAY)
-        
-        # 2. Apply CLAHE
-        clahe_face = self.clahe.apply(face_gray)
-        
-        # 3. Convert back to BGR for ArcFace (it expects 3 channels)
-        preprocessed_face = cv2.cvtColor(clahe_face, cv2.COLOR_GRAY2BGR)
-
-        # 4. Save to debug folder
-        if self.debug_enabled:
-            filename = os.path.join(self.debug_path, f"track_{tracker_id}_frame_{frame_num}.jpg")
-            cv2.imwrite(filename, preprocessed_face)
-            
-        return preprocessed_face
-
-    def get_embedding(self, preprocessed_face):
-        """Gets L2-normalized ArcFace embedding."""
+    def get_embedding(self, face_image_bgr):
+        """
+        Gets L2-normalized ArcFace embedding from RGB face.
+        No preprocessing - just pass the aligned RGB face directly.
+        """
         try:
-            # DeepFace's 'represent' function handles resizing, normalization,
-            # and returns a L2-normalized embedding by default for ArcFace.
+            # DeepFace handles resizing and normalization internally
             embedding_obj = DeepFace.represent(
-                preprocessed_face,
+                face_image_bgr,
                 model_name=self.arcface_model,
-                enforce_detection=False, # We've already aligned
+                enforce_detection=False,
                 detector_backend='skip'
             )
             
-            # embedding_obj is a list of dicts, we want the first
             embedding = embedding_obj[0]['embedding']
             return np.array(embedding)
         
