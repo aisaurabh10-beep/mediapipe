@@ -19701,3 +19701,242 @@ NameError: name 'np' is not defined
 2025-11-17 18:35:09,986 - root - INFO - Application shutting down.
 2025-11-17 18:35:09,987 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
 2025-11-17 18:35:10,027 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 19:17:07,062 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 19:17:07,063 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 19:17:07,129 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 19:17:07,130 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 19:17:09,772 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 19:17:09,772 - src.model_loader - INFO - Building reference face database...
+2025-11-17 19:17:21,693 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 19:17:36,706 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 19:17:49,628 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 19:18:02,614 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 19:18:13,310 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 19:18:13,311 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 19:18:13,313 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 19:18:13,321 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 6856
+2025-11-17 19:18:18,314 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 19:18:29,838 - src.video_stream - INFO - Video stream connected.
+2025-11-17 19:18:58,700 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 19:18:58,724 - root - INFO - Application shutting down.
+2025-11-17 19:18:58,726 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 19:18:58,762 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 19:24:31,899 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 19:24:31,899 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 19:24:31,966 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 19:24:31,966 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 19:24:34,548 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 19:24:34,549 - src.model_loader - INFO - Building reference face database...
+2025-11-17 19:24:46,493 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 19:25:01,340 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 19:25:14,157 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 19:25:27,146 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 19:25:37,771 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 19:25:37,771 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 19:25:37,774 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 19:25:37,785 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 6584
+2025-11-17 19:25:42,776 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 19:25:54,202 - src.video_stream - INFO - Video stream connected.
+2025-11-17 19:26:00,705 - src.attendance_manager - INFO - ATTENDANCE: saU marked at 2025-11-17 19:26:00
+2025-11-17 19:26:08,837 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 19:26:08,864 - root - INFO - Application shutting down.
+2025-11-17 19:26:08,865 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 19:26:08,900 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 19:26:31,188 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 19:26:31,189 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 19:26:31,255 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 19:26:31,256 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 19:26:33,826 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 19:26:33,827 - src.model_loader - INFO - Building reference face database...
+2025-11-17 19:26:45,746 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 19:27:00,693 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 19:27:13,530 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 19:27:26,437 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 19:27:37,151 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 19:27:37,152 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 19:27:37,154 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 19:27:37,162 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 19884
+2025-11-17 19:27:42,154 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 19:27:54,022 - src.video_stream - INFO - Video stream connected.
+2025-11-17 19:27:59,565 - src.attendance_manager - INFO - ATTENDANCE: saU marked at 2025-11-17 19:27:59
+2025-11-17 19:28:00,276 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251117_192800.jpg
+2025-11-17 19:28:03,877 - src.attendance_manager - INFO - ATTENDANCE: VAIBH marked at 2025-11-17 19:28:03
+2025-11-17 19:28:06,479 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251117_192806.jpg
+2025-11-17 19:28:17,048 - src.attendance_manager - INFO - ATTENDANCE: RIHAN marked at 2025-11-17 19:28:17
+2025-11-17 19:28:17,339 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251117_192817.jpg
+2025-11-17 19:28:24,756 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 19:28:24,782 - root - INFO - Application shutting down.
+2025-11-17 19:28:24,784 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 19:28:24,819 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 19:32:42,640 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 19:32:42,641 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 19:32:42,708 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 19:32:42,709 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 19:32:45,289 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 19:32:45,289 - src.model_loader - INFO - Building reference face database...
+2025-11-17 19:32:57,226 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 19:33:12,132 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 19:33:25,025 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 19:33:38,001 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 19:33:48,636 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 19:33:48,637 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 19:33:48,639 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 19:33:48,647 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 2976
+2025-11-17 19:33:53,640 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 19:34:05,201 - src.video_stream - INFO - Video stream connected.
+2025-11-17 19:34:21,640 - src.attendance_manager - INFO - ATTENDANCE: saU marked at 2025-11-17 19:34:21
+2025-11-17 19:34:21,930 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251117_193421.jpg
+2025-11-17 19:34:44,658 - src.attendance_manager - INFO - ATTENDANCE: VAIBH marked at 2025-11-17 19:34:44
+2025-11-17 19:34:47,673 - src.attendance_manager - INFO - ATTENDANCE: RIHAN marked at 2025-11-17 19:34:47
+2025-11-17 19:34:48,450 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_7_20251117_193448.jpg
+2025-11-17 19:35:12,920 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 19:35:12,940 - root - INFO - Application shutting down.
+2025-11-17 19:35:12,942 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 19:35:12,976 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 19:39:07,776 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 19:39:07,777 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 19:39:07,844 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 19:39:07,845 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 19:39:10,429 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 19:39:10,430 - src.model_loader - INFO - Building reference face database...
+2025-11-17 19:39:22,376 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 19:39:37,308 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 19:39:50,149 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 19:40:03,152 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 19:40:13,752 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 19:40:13,752 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 19:40:13,755 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 19:40:13,762 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 19248
+2025-11-17 19:40:18,756 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 19:40:30,164 - src.video_stream - INFO - Video stream connected.
+2025-11-17 19:41:01,589 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 19:41:01,613 - root - INFO - Application shutting down.
+2025-11-17 19:41:01,615 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 19:41:01,652 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 19:44:18,872 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 19:44:18,873 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 19:44:18,940 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 19:44:18,941 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 19:44:21,538 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 19:44:21,538 - src.model_loader - INFO - Building reference face database...
+2025-11-17 19:44:33,411 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 19:44:48,234 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 19:45:00,952 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 19:45:13,817 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 19:45:24,403 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 19:45:24,404 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 19:45:24,407 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 19:45:24,414 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 11104
+2025-11-17 19:45:29,407 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 19:45:40,734 - src.video_stream - INFO - Video stream connected.
+2025-11-17 19:45:49,814 - src.attendance_manager - INFO - ATTENDANCE: saU marked at 2025-11-17 19:45:49
+2025-11-17 19:46:55,489 - src.attendance_manager - INFO - ATTENDANCE: RIHAN marked at 2025-11-17 19:46:55
+2025-11-17 19:46:56,081 - src.attendance_manager - INFO - ATTENDANCE: VAIBH marked at 2025-11-17 19:46:56
+2025-11-17 19:46:56,477 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251117_194656.jpg
+2025-11-17 19:47:10,000 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 19:47:10,030 - root - INFO - Application shutting down.
+2025-11-17 19:47:10,032 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 19:47:10,067 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 20:01:37,182 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 20:01:37,183 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 20:01:37,249 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 20:01:37,249 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 20:01:39,835 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 20:01:39,836 - src.model_loader - INFO - Building reference face database...
+2025-11-17 20:01:51,796 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 20:02:06,907 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 20:02:19,785 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 20:02:32,773 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 20:02:43,578 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 20:02:43,579 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 20:02:43,582 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 20:02:43,593 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 4320
+2025-11-17 20:02:48,582 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 20:03:00,039 - src.video_stream - INFO - Video stream connected.
+2025-11-17 20:04:21,323 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 20:04:21,349 - root - INFO - Application shutting down.
+2025-11-17 20:04:21,351 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 20:04:21,385 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 20:38:14,347 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 20:38:14,348 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 20:38:14,416 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 20:38:14,416 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 20:38:17,134 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 20:38:17,135 - src.model_loader - INFO - Building reference face database...
+2025-11-17 20:38:29,168 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 20:38:44,174 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 20:38:57,013 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 20:39:09,931 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 20:39:20,598 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 20:39:20,599 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 20:39:20,602 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 20:39:20,609 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 16212
+2025-11-17 20:39:25,602 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 20:39:37,257 - src.video_stream - INFO - Video stream connected.
+2025-11-17 20:40:13,015 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 20:40:13,042 - root - INFO - Application shutting down.
+2025-11-17 20:40:13,044 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 20:40:13,082 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 20:49:01,981 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 20:49:01,981 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 20:49:02,048 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 20:49:02,048 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 20:49:04,634 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 20:49:04,635 - src.model_loader - INFO - Building reference face database...
+2025-11-17 20:49:16,555 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 20:49:31,465 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 20:49:44,323 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 20:49:57,243 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 20:50:07,854 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 20:50:07,854 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 20:50:07,857 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 20:50:07,865 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 19872
+2025-11-17 20:50:12,857 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 20:50:24,548 - src.video_stream - INFO - Video stream connected.
+2025-11-17 20:51:13,561 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 20:51:13,579 - root - INFO - Application shutting down.
+2025-11-17 20:51:13,581 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 20:51:13,623 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 20:51:34,380 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 20:51:34,380 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 20:51:34,447 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 20:51:34,448 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 20:51:37,035 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 20:51:37,036 - src.model_loader - INFO - Building reference face database...
+2025-11-17 20:51:48,991 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 20:52:04,127 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 20:52:17,174 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 20:52:30,278 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 20:52:41,146 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 20:52:41,146 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 20:52:41,149 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 20:52:41,156 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 15936
+2025-11-17 20:52:46,149 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 20:52:57,679 - src.video_stream - INFO - Video stream connected.
+2025-11-17 21:24:22,170 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 21:24:22,195 - root - INFO - Application shutting down.
+2025-11-17 21:24:22,197 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 21:24:22,232 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-17 21:26:13,520 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-17 21:26:13,520 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-17 21:26:13,586 - src.model_loader - INFO - YOLO model loaded.
+2025-11-17 21:26:13,587 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-17 21:26:16,160 - src.face_processor - INFO - ArcFace model ready.
+2025-11-17 21:26:16,161 - src.model_loader - INFO - Building reference face database...
+2025-11-17 21:26:28,114 - src.model_loader - INFO - Processed RIHAN with 3 images.
+2025-11-17 21:26:42,921 - src.model_loader - INFO - Processed SAAD with 7 images.
+2025-11-17 21:26:55,729 - src.model_loader - INFO - Processed SANDEEEP with 6 images.
+2025-11-17 21:27:08,673 - src.model_loader - INFO - Processed saU with 6 images.
+2025-11-17 21:27:19,376 - src.model_loader - INFO - Processed VAIBH with 5 images.
+2025-11-17 21:27:19,377 - src.model_loader - INFO - Reference database built. 5 people found.
+2025-11-17 21:27:19,379 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-17 21:27:19,386 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 13924
+2025-11-17 21:27:24,380 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-17 21:27:35,993 - src.video_stream - INFO - Video stream connected.
+2025-11-17 21:27:40,557 - src.attendance_manager - INFO - ATTENDANCE: saU marked at 2025-11-17 21:27:40
+2025-11-17 21:27:40,839 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251117_212740.jpg
+2025-11-17 21:27:53,582 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251117_212753.jpg
+2025-11-17 21:27:56,510 - src.video_stream - INFO - Video stream stopped.
+2025-11-17 21:27:56,537 - root - INFO - Application shutting down.
+2025-11-17 21:27:56,538 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-17 21:27:56,570 - src.mediapipe_client - INFO - MediaPipe worker stopped
