@@ -33,9 +33,7 @@ def main():
         
         yolo_conf = config.getfloat('Model_Settings', 'yolo_conf_threshold')
         padding = config.getint('Model_Settings', 'padding')
-        
         blur_thresh = config.getfloat('Quality_Filters', 'blur_threshold')
-        
         ema_alpha = config.getfloat('Performance', 'ema_alpha')
         
         frame_num = 0
@@ -81,71 +79,113 @@ def main():
                     if face_crop.size == 0:
                         continue
                     
-                    # Blur check on original crop
+                    # === FILTER 1: Initial Blur Check ===
                     blur_score = face_processor.calculate_blur(face_crop)
                     if blur_score < blur_thresh:
                         status_text = f"Too Blurry ({blur_score:.0f})"
-                    else:
-                        # MediaPipe alignment
-                        aligned_face, yaw, pitch, roll, aspect_ratio = mp_client.get_alignment_and_pose(face_crop)
+                        status_color = (0, 0, 255)
                         
-                        if aligned_face is None:
-                            status_text = "MP Failed"
-                        else:
-                            pose_text = f"Y:{yaw:.0f} P:{pitch:.0f} R:{roll:.0f}"
-                            
-                            # Geometric Validation
-                            is_valid_face, validation_reason = FaceValidator.comprehensive_validation(aligned_face)
-                            
-                            if not is_valid_face:
-                                status_text = f"REJECT: {validation_reason}"
-                                logger.debug(f"Track {track_id} failed geometric validation: {validation_reason}")
-                            
-                            # Re-check blur on aligned face
-                            else:
-                                aligned_blur = face_processor.calculate_blur(aligned_face)
-                                if aligned_blur < blur_thresh:
-                                    status_text = f"Aligned Blur ({aligned_blur:.0f})"
-                                    logger.debug(f"Track {track_id} REJECTED: Aligned face blur {aligned_blur:.0f}")
-                                else:
-                                    # NO CLAHE - Use aligned RGB face directly
-                                    preprocessed_face = cv2.resize(aligned_face, (112, 112))
-                                    
-                                    # Optional: Save for debugging
-                                    if config.getboolean('Logging', 'debug_save_faces', fallback=False):
-                                        debug_path = config.get('Paths', 'debug_aligned_faces_path')
-                                        filename = os.path.join(debug_path, f"track_{track_id}_frame_{frame_num}_RGB.jpg")
-                                        cv2.imwrite(filename, preprocessed_face)
-                                    
-                                    # ArcFace embedding
-                                    current_embedding = face_processor.get_embedding(preprocessed_face)
-                                    if current_embedding is None:
-                                        status_text = "ArcFace Failed"
-                                    else:
-                                        # Temporal EMA
-                                        if track_id not in tracked_faces:
-                                            tracked_faces[track_id] = {'ema_embedding': None, 'name': 'Unknown'}
-                                        
-                                        prev_ema = tracked_faces[track_id]['ema_embedding']
-                                        smoothed_embedding = face_processor.apply_ema(current_embedding, prev_ema, ema_alpha)
-                                        tracked_faces[track_id]['ema_embedding'] = smoothed_embedding
-
-                                        # Match
-                                        name, similarity = att_manager.find_match(smoothed_embedding)
-                                        
-                                        logger.debug(f"Track {track_id}: {name} (sim={similarity:.3f})")
-                                        
-                                        if name != "Unknown":
-                                            tracked_faces[track_id]['name'] = name
-                                            att_manager.mark_attendance(name)
-                                            status_text = f"{name} ({similarity:.2f})"
-                                            status_color = (0, 255, 0)
-                                        else:
-                                            att_manager.handle_unknown(face_crop, track_id)
-                                            status_text = f"Unknown ({similarity:.2f})"
-                                            status_color = (0, 255, 255)
+                        # Clear any stored EMA for this track
+                        if track_id in tracked_faces:
+                            tracked_faces[track_id]['ema_embedding'] = None
+                        
+                        cv2.rectangle(frame, (x1, y1), (x2, y2), status_color, 2)
+                        (text_w, text_h), _ = cv2.getTextSize(status_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
+                        cv2.rectangle(frame, (x1, y1 - 20), (x1 + text_w, y1), status_color, -1)
+                        cv2.putText(frame, status_text, (x1, y1 - 5), 
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 2)
+                        cv2.putText(frame, f"ID: {track_id}", (x1, y1 - 25), 
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+                        continue
                     
-                    # Visualization
+                    # === FILTER 2: MediaPipe Alignment ===
+                    aligned_face, yaw, pitch, roll, aspect_ratio = mp_client.get_alignment_and_pose(face_crop)
+                    
+                    if aligned_face is None:
+                        status_text = "MP Failed"
+                        status_color = (0, 0, 255)
+                        
+                        cv2.rectangle(frame, (x1, y1), (x2, y2), status_color, 2)
+                        cv2.putText(frame, status_text, (x1, y1 - 5), 
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+                        continue
+                    
+                    pose_text = f"Y:{yaw:.0f} P:{pitch:.0f} R:{roll:.0f}"
+                    
+                    # === FILTER 3: Geometric Validation ===
+                    is_valid_face, validation_reason = FaceValidator.comprehensive_validation(aligned_face)
+                    
+                    if not is_valid_face:
+                        status_text = f"REJECT: {validation_reason}"
+                        status_color = (0, 0, 255)
+                        logger.debug(f"Track {track_id} failed geometric validation: {validation_reason}")
+                        
+                        # Clear any stored EMA for this track
+                        if track_id in tracked_faces:
+                            tracked_faces[track_id]['ema_embedding'] = None
+                        
+                        cv2.rectangle(frame, (x1, y1), (x2, y2), status_color, 2)
+                        cv2.putText(frame, status_text, (x1, y1 - 5), 
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+                        cv2.putText(frame, pose_text, (x1, y2 + 20), 
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+                        continue
+                    
+                    # === FILTER 4: Re-check Blur on Aligned Face ===
+                    aligned_blur = face_processor.calculate_blur(aligned_face)
+                    if aligned_blur < blur_thresh:
+                        status_text = f"Aligned Blur ({aligned_blur:.0f})"
+                        status_color = (0, 0, 255)
+                        logger.debug(f"Track {track_id} REJECTED: Aligned face blur {aligned_blur:.0f}")
+                        
+                        # Clear any stored EMA for this track
+                        if track_id in tracked_faces:
+                            tracked_faces[track_id]['ema_embedding'] = None
+                        
+                        cv2.rectangle(frame, (x1, y1), (x2, y2), status_color, 2)
+                        cv2.putText(frame, status_text, (x1, y1 - 5), 
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+                        continue
+                    
+                    # === ALL CHECKS PASSED - Process for Recognition ===
+                    preprocessed_face = cv2.resize(aligned_face, (112, 112))
+                    
+                    # ArcFace embedding - ONLY save if this succeeds
+                    current_embedding = face_processor.get_embedding(preprocessed_face)
+                    if current_embedding is None:
+                        status_text = "ArcFace Failed"
+                        status_color = (0, 165, 255)
+                    else:
+                        # Optional: Save for debugging (ONLY after successful embedding)
+                        if config.getboolean('Logging', 'debug_save_faces', fallback=False):
+                            debug_path = config.get('Paths', 'debug_aligned_faces_path')
+                            filename = os.path.join(debug_path, f"track_{track_id}_frame_{frame_num}_blur{aligned_blur:.0f}_RGB.jpg")
+                            cv2.imwrite(filename, preprocessed_face)
+                        
+                        # Temporal EMA
+                        if track_id not in tracked_faces:
+                            tracked_faces[track_id] = {'ema_embedding': None, 'name': 'Unknown'}
+                        
+                        prev_ema = tracked_faces[track_id]['ema_embedding']
+                        smoothed_embedding = face_processor.apply_ema(current_embedding, prev_ema, ema_alpha)
+                        tracked_faces[track_id]['ema_embedding'] = smoothed_embedding
+
+                        # Match
+                        name, similarity = att_manager.find_match(smoothed_embedding)
+                        
+                        logger.debug(f"Track {track_id}: {name} (sim={similarity:.3f})")
+                        
+                        if name != "Unknown":
+                            tracked_faces[track_id]['name'] = name
+                            att_manager.mark_attendance(name)
+                            status_text = f"{name} ({similarity:.2f})"
+                            status_color = (0, 255, 0)
+                        else:
+                            att_manager.handle_unknown(face_crop, track_id)
+                            status_text = f"Unknown ({similarity:.2f})"
+                            status_color = (0, 255, 255)
+                    
+                    # === Visualization ===
                     cv2.rectangle(frame, (x1, y1), (x2, y2), status_color, 2)
                     
                     (text_w, text_h), _ = cv2.getTextSize(status_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
