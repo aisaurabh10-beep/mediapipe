@@ -37,7 +37,7 @@ class FaceValidator:
         middle_to_bottom = middle_mean / (bottom_mean + 1e-6)
 
         # Tolerances (relaxed a bit for webcams)
-        if top_to_middle < 0.65:   # from 0.7 -> 0.65
+        if top_to_middle < 0.45:   # from 0.7 -> 0.65
             return False, f"Dark top (ratio={top_to_middle:.2f})"
 
         # Allow slightly higher middle_to_bottom when image is overall bright (selfie glare)
