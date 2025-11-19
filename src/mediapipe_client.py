@@ -13,6 +13,7 @@ class MediaPipeClient:
         self.process = None
         self.start_worker()
         atexit.register(self.stop)
+        
 
     def start_worker(self):
         """Launches the MediaPipe worker using configured python.exe path."""

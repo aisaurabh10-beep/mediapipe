@@ -20119,3 +20119,115 @@ NameError: name 'np' is not defined
 2025-11-18 19:55:39,667 - root - INFO - Application shutting down.
 2025-11-18 19:55:39,669 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
 2025-11-18 19:55:39,699 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-19 13:54:21,498 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-19 13:54:21,499 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-19 13:54:21,648 - src.model_loader - INFO - YOLO model loaded.
+2025-11-19 13:54:21,649 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-19 13:54:24,679 - src.face_processor - INFO - ArcFace model ready.
+2025-11-19 13:54:24,679 - src.model_loader - INFO - Building reference face database...
+2025-11-19 13:54:45,748 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-19 13:55:02,881 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-19 13:55:17,921 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-19 13:55:37,393 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-19 13:55:48,294 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-19 13:56:05,829 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-19 13:56:20,938 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-19 13:56:20,938 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-19 13:56:20,942 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-19 13:56:20,953 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 2168
+2025-11-19 13:56:25,943 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-19 13:56:37,274 - src.video_stream - INFO - Video stream connected.
+2025-11-19 13:56:47,009 - src.attendance_manager - INFO - ATTENDANCE: vaibhav marked at 2025-11-19 13:56:47
+2025-11-19 13:56:47,375 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251119_135647.jpg
+2025-11-19 13:57:07,906 - src.attendance_manager - INFO - ATTENDANCE: saad marked at 2025-11-19 13:57:07
+2025-11-19 13:57:08,352 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251119_135708.jpg
+2025-11-19 13:57:13,700 - src.attendance_manager - INFO - ATTENDANCE: uday marked at 2025-11-19 13:57:13
+2025-11-19 13:57:14,277 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251119_135714.jpg
+2025-11-19 13:57:41,303 - src.attendance_manager - INFO - ATTENDANCE: rihan marked at 2025-11-19 13:57:41
+2025-11-19 13:57:41,829 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_8_20251119_135741.jpg
+2025-11-19 13:58:03,079 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_9_20251119_135803.jpg
+2025-11-19 13:58:28,941 - src.attendance_manager - INFO - ATTENDANCE: uday marked at 2025-11-19 13:58:28
+2025-11-19 13:58:48,306 - src.attendance_manager - INFO - ATTENDANCE: vaibhav marked at 2025-11-19 13:58:48
+2025-11-19 13:58:55,632 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_14_20251119_135855.jpg
+2025-11-19 13:59:44,192 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_31_20251119_135944.jpg
+2025-11-19 13:59:48,533 - src.attendance_manager - INFO - ATTENDANCE: shoib marked at 2025-11-19 13:59:48
+2025-11-19 14:00:01,221 - src.attendance_manager - INFO - ATTENDANCE: vaibhav marked at 2025-11-19 14:00:01
+2025-11-19 14:00:01,614 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_36_20251119_140001.jpg
+2025-11-19 14:00:09,925 - src.attendance_manager - INFO - ATTENDANCE: uday marked at 2025-11-19 14:00:09
+2025-11-19 14:00:11,096 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_38_20251119_140011.jpg
+2025-11-19 14:00:14,529 - src.attendance_manager - INFO - ATTENDANCE: rihan marked at 2025-11-19 14:00:14
+2025-11-19 14:00:19,370 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-19 14:00:19
+2025-11-19 14:00:19,757 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_39_20251119_140019.jpg
+2025-11-19 14:00:21,923 - src.attendance_manager - INFO - ATTENDANCE: sandeep marked at 2025-11-19 14:00:21
+2025-11-19 14:00:24,091 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_42_20251119_140024.jpg
+2025-11-19 14:00:30,126 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_39_20251119_140030.jpg
+2025-11-19 14:02:29,774 - src.attendance_manager - INFO - ATTENDANCE: sandeep marked at 2025-11-19 14:02:29
+2025-11-19 14:02:30,553 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_69_20251119_140230.jpg
+2025-11-19 14:29:46,203 - root - INFO - Shutdown requested by user.
+2025-11-19 14:29:46,543 - src.video_stream - INFO - Video stream stopped.
+2025-11-19 14:29:46,555 - root - INFO - Application shutting down.
+2025-11-19 14:29:46,558 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-19 14:29:46,592 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-19 18:39:45,125 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-19 18:39:45,126 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-19 18:39:45,195 - src.model_loader - INFO - YOLO model loaded.
+2025-11-19 18:39:45,195 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-19 18:39:47,799 - src.face_processor - INFO - ArcFace model ready.
+2025-11-19 18:39:47,799 - src.model_loader - INFO - Building reference face database...
+2025-11-19 18:40:08,527 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-19 18:40:25,742 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-19 18:40:40,853 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-19 18:41:00,233 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-19 18:41:11,038 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-19 18:41:28,342 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-19 18:41:43,413 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-19 18:41:43,414 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-19 18:41:43,416 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-19 18:41:43,427 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 11784
+2025-11-19 18:41:48,417 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-19 18:41:59,735 - src.video_stream - INFO - Video stream connected.
+2025-11-19 18:42:26,869 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251119_184226.jpg
+2025-11-19 18:42:36,939 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_4_20251119_184236.jpg
+2025-11-19 18:42:49,507 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_6_20251119_184249.jpg
+2025-11-19 18:42:59,074 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_9_20251119_184259.jpg
+2025-11-19 18:43:06,709 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-19 18:43:06
+2025-11-19 18:43:13,160 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_11_20251119_184313.jpg
+2025-11-19 18:43:23,265 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_11_20251119_184323.jpg
+2025-11-19 18:43:25,292 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_16_20251119_184325.jpg
+2025-11-19 18:43:37,845 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_11_20251119_184337.jpg
+2025-11-19 18:43:54,795 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_20_20251119_184354.jpg
+2025-11-19 18:44:02,111 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_22_20251119_184402.jpg
+2025-11-19 18:44:03,876 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_23_20251119_184403.jpg
+2025-11-19 18:44:14,141 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_23_20251119_184414.jpg
+2025-11-19 18:44:22,764 - src.video_stream - INFO - Video stream stopped.
+2025-11-19 18:44:22,783 - root - INFO - Application shutting down.
+2025-11-19 18:44:22,784 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-19 18:44:22,817 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-19 19:16:43,674 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-19 19:16:43,674 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt...
+2025-11-19 19:16:43,743 - src.model_loader - INFO - YOLO model loaded.
+2025-11-19 19:16:43,744 - src.face_processor - INFO - Warming up ArcFace model...
+2025-11-19 19:16:46,448 - src.face_processor - INFO - ArcFace model ready.
+2025-11-19 19:16:46,448 - src.model_loader - INFO - Building reference face database...
+2025-11-19 19:17:07,219 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-19 19:17:24,506 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-19 19:17:39,605 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-19 19:17:58,986 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-19 19:18:09,847 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-19 19:18:27,284 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-19 19:18:42,470 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-19 19:18:42,471 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-19 19:18:42,474 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-19 19:18:42,485 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 2072
+2025-11-19 19:18:47,474 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-19 19:18:58,942 - src.video_stream - INFO - Video stream connected.
+2025-11-19 19:18:59,201 - src.video_stream - WARNING - Stream disconnected. Reconnecting...
+2025-11-19 19:19:09,234 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-19 19:19:20,564 - src.video_stream - INFO - Video stream connected.
+2025-11-19 19:19:39,275 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251119_191939.jpg
+2025-11-19 19:19:50,124 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251119_191950.jpg
+2025-11-19 19:20:01,706 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251119_192001.jpg
+2025-11-19 19:20:08,483 - src.video_stream - INFO - Video stream stopped.
+2025-11-19 19:20:08,502 - root - INFO - Application shutting down.
+2025-11-19 19:20:08,503 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-19 19:20:08,532 - src.mediapipe_client - INFO - MediaPipe worker stopped
