@@ -20231,3 +20231,628 @@ NameError: name 'np' is not defined
 2025-11-19 19:20:08,502 - root - INFO - Application shutting down.
 2025-11-19 19:20:08,503 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
 2025-11-19 19:20:08,532 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-19 20:23:35,833 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-19 20:23:35,833 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-19 20:23:35,919 - src.model_loader - INFO - CUDA not available, using CPU
+2025-11-19 20:23:36,031 - src.face_processor - WARNING - InsightFace load failed or not installed: cannot import name 'float4_e2m1fn' from 'ml_dtypes'
+Falling back to DeepFace. Trace: Traceback (most recent call last):
+  File "C:\facemediapipe\src\face_processor.py", line 32, in __init__
+    import insightface
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\insightface\__init__.py", line 16, in <module>
+    from . import model_zoo
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\insightface\model_zoo\__init__.py", line 1, in <module>
+    from .model_zoo import get_model
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\insightface\model_zoo\model_zoo.py", line 11, in <module>
+    from .arcface_onnx import *
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\insightface\model_zoo\arcface_onnx.py", line 10, in <module>
+    import onnx
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\onnx\__init__.py", line 131, in <module>
+    from onnx import (
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\onnx\compose.py", line 8, in <module>
+    from onnx import (
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\onnx\helper.py", line 21, in <module>
+    from onnx import _mapping, defs, subbyte
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\onnx\_mapping.py", line 104, in <module>
+    np.dtype(ml_dtypes.float4_e2m1fn),
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\ml_dtypes\__init__.py", line 71, in __getattr__
+    raise AttributeError(f'cannot import name {name!r} from {__name__!r}')
+AttributeError: cannot import name 'float4_e2m1fn' from 'ml_dtypes'
+
+2025-11-19 20:23:36,033 - src.face_processor - INFO - Warming up DeepFace ArcFace backend (skip detector) ...
+2025-11-19 20:23:38,500 - src.face_processor - INFO - DeepFace warmup complete.
+2025-11-19 20:23:38,501 - src.face_processor - INFO - FaceProcessor initialized. backend=deepface, device=cpu
+2025-11-19 20:23:38,502 - src.model_loader - INFO - Building reference face database...
+2025-11-19 20:23:38,550 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_51_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,598 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_54_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,645 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_56_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,692 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_58_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,739 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_59_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,786 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_16_00_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,832 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_16_01_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,879 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_23_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,926 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_27_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:38,973 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_28_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,022 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_30_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,070 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_31_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,117 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_32_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,164 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_33_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,211 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_35_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,259 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_45_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,307 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_46_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,355 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_56_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,402 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_58_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,450 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_29_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,497 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_30_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,545 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_32_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,592 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_45_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,641 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_46_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,689 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_48_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,736 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_49_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,782 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_50_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,829 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_52_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,876 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_53_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,921 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_55_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:39,968 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_57_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,017 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_04_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,065 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_13_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,113 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_16_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,160 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_17_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,207 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_18_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,257 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_39_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,306 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_46_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,355 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_48_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,403 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_49_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,452 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_50_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,501 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_51_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,550 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_52_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,599 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_53_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,647 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_04_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,694 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_05_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,741 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_06_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,788 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_07_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,834 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_11_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,881 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_14_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,927 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_17_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-19 20:23:40,928 - src.model_loader - INFO - Reference database built. 0 people found.
+2025-11-19 20:23:40,930 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-19 20:23:40,939 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 12772
+2025-11-19 20:23:45,930 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-19 20:23:55,016 - src.video_stream - INFO - Video stream connected.
+2025-11-19 20:23:58,923 - src.video_stream - INFO - Video stream stopped.
+2025-11-19 20:23:58,940 - root - INFO - Application shutting down.
+2025-11-19 20:23:58,942 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-19 20:23:58,972 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 17:36:00,504 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 17:36:00,505 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 17:36:00,623 - src.model_loader - INFO - CUDA not available, using CPU
+2025-11-20 17:36:00,819 - src.face_processor - WARNING - InsightFace load failed or not installed: cannot import name 'float4_e2m1fn' from 'ml_dtypes'
+Falling back to DeepFace. Trace: Traceback (most recent call last):
+  File "C:\facemediapipe\src\face_processor.py", line 32, in __init__
+    import insightface
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\insightface\__init__.py", line 16, in <module>
+    from . import model_zoo
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\insightface\model_zoo\__init__.py", line 1, in <module>
+    from .model_zoo import get_model
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\insightface\model_zoo\model_zoo.py", line 11, in <module>
+    from .arcface_onnx import *
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\insightface\model_zoo\arcface_onnx.py", line 10, in <module>
+    import onnx
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\onnx\__init__.py", line 131, in <module>
+    from onnx import (
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\onnx\compose.py", line 8, in <module>
+    from onnx import (
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\onnx\helper.py", line 21, in <module>
+    from onnx import _mapping, defs, subbyte
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\onnx\_mapping.py", line 104, in <module>
+    np.dtype(ml_dtypes.float4_e2m1fn),
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Frames\anaconda3\envs\tf_py2\Lib\site-packages\ml_dtypes\__init__.py", line 71, in __getattr__
+    raise AttributeError(f'cannot import name {name!r} from {__name__!r}')
+AttributeError: cannot import name 'float4_e2m1fn' from 'ml_dtypes'
+
+2025-11-20 17:36:00,822 - src.face_processor - INFO - Warming up DeepFace ArcFace backend (skip detector) ...
+2025-11-20 17:36:03,888 - src.face_processor - INFO - DeepFace warmup complete.
+2025-11-20 17:36:03,889 - src.face_processor - INFO - FaceProcessor initialized. backend=deepface, device=cpu
+2025-11-20 17:36:03,890 - src.model_loader - INFO - Building reference face database...
+2025-11-20 17:36:03,934 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_51_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:03,975 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_54_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,016 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_56_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,055 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_58_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,094 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_59_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,132 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_16_00_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,171 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_16_01_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,237 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_23_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,279 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_27_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,319 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_28_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,359 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_30_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,416 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_31_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,455 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_32_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,512 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_33_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,553 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_35_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,606 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_45_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,646 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_46_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,686 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_56_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,725 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_58_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,765 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_29_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,804 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_30_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,843 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_32_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,882 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_45_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,921 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_46_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,960 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_48_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:04,998 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_49_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,037 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_50_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,075 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_52_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,113 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_53_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,151 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_55_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,190 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_57_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,229 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_04_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,267 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_13_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,325 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_16_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,378 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_17_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,418 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_18_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,476 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_39_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,536 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_46_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,578 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_48_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,620 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_49_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,663 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_50_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,706 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_51_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,768 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_52_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,811 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_53_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,849 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_04_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,887 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_05_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,926 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_06_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:05,964 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_07_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:06,002 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_11_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:06,041 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_14_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:06,080 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_17_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:36:06,080 - src.model_loader - INFO - Reference database built. 0 people found.
+2025-11-20 17:36:06,083 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 17:36:06,096 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 14656
+2025-11-20 17:36:11,084 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 17:36:22,104 - src.video_stream - INFO - Video stream connected.
+2025-11-20 17:38:34,027 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_173834.jpg
+2025-11-20 17:38:58,413 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_173858.jpg
+2025-11-20 17:39:12,041 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_173912.jpg
+2025-11-20 17:39:22,223 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_173922.jpg
+2025-11-20 17:40:07,661 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174007.jpg
+2025-11-20 17:41:08,375 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174108.jpg
+2025-11-20 17:41:30,288 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174130.jpg
+2025-11-20 17:41:57,954 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174157.jpg
+2025-11-20 17:42:30,097 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174230.jpg
+2025-11-20 17:42:57,211 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174257.jpg
+2025-11-20 17:43:15,151 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174315.jpg
+2025-11-20 17:43:27,264 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174327.jpg
+2025-11-20 17:44:09,400 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174409.jpg
+2025-11-20 17:44:41,070 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174441.jpg
+2025-11-20 17:45:15,046 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174515.jpg
+2025-11-20 17:45:32,114 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174532.jpg
+2025-11-20 17:45:59,417 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_3_20251120_174559.jpg
+2025-11-20 17:46:45,924 - root - INFO - Shutdown requested by user.
+2025-11-20 17:46:46,233 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 17:46:46,239 - root - INFO - Application shutting down.
+2025-11-20 17:46:46,241 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 17:46:46,275 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 17:48:39,214 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 17:48:39,216 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 17:48:39,306 - src.model_loader - INFO - CUDA not available, using CPU
+2025-11-20 17:48:41,777 - src.face_processor - INFO - Trying insightface.model_zoo.get_model('antelopev2') ...
+2025-11-20 17:48:42,098 - src.face_processor - INFO - Loaded InsightFace model 'antelopev2' on GPU (ctx_id=0).
+2025-11-20 17:48:42,098 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface, device=gpu
+2025-11-20 17:48:42,099 - src.model_loader - INFO - Building reference face database...
+2025-11-20 17:48:42,155 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_51_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,210 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_54_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,265 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_56_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,319 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_58_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,373 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_59_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,428 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_16_00_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,482 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_16_01_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,537 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_23_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,591 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_27_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,646 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_28_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,701 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_30_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,756 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_31_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,811 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_32_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,865 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_33_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,919 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_35_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:42,975 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_45_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,030 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_46_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,085 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_56_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,139 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_58_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,194 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_29_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,249 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_30_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,304 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_32_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,354 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_45_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,408 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_46_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,463 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_48_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,512 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_49_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,567 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_50_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,644 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_52_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,693 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_53_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,740 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_55_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,794 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_57_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,848 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_04_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,903 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_13_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:43,957 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_16_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,012 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_17_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,067 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_18_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,124 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_39_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,181 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_46_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,237 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_48_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,294 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_49_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,350 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_50_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,407 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_51_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,464 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_52_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,521 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_53_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,570 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_04_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,625 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_05_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,676 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_06_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,729 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_07_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,783 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_11_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,837 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_14_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,889 - src.model_loader - WARNING - Failed to process dataset/vaibhav\WIN_20251118_18_18_17_Pro.jpg for vaibhav: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:48:44,889 - src.model_loader - INFO - Reference database built. 0 people found.
+2025-11-20 17:48:44,891 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 17:48:44,901 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 7800
+2025-11-20 17:48:45,004 - root - INFO - Shutdown requested by user.
+2025-11-20 17:48:49,892 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 17:49:00,497 - src.video_stream - INFO - Video stream connected.
+2025-11-20 17:49:00,505 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 17:49:00,513 - root - INFO - Application shutting down.
+2025-11-20 17:49:00,527 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 17:49:00,529 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 17:55:38,267 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 17:55:38,269 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 17:55:38,338 - src.model_loader - INFO - CUDA not available, using CPU
+2025-11-20 17:55:40,887 - src.face_processor - INFO - Trying insightface.model_zoo.get_model('antelopev2') ...
+2025-11-20 17:55:46,851 - src.face_processor - INFO - Loaded InsightFace model 'antelopev2' on GPU (ctx_id=0).
+2025-11-20 17:55:46,852 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface, device=gpu
+2025-11-20 17:55:46,852 - src.model_loader - INFO - Building reference face database...
+2025-11-20 17:55:46,891 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_51_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:46,929 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_54_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:46,967 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_56_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,005 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_58_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,043 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_15_59_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,081 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_16_00_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,118 - src.model_loader - WARNING - Failed to process dataset/rihan\WIN_20251118_18_16_01_Pro.jpg for rihan: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,157 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_23_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,195 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_27_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,234 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_28_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,272 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_30_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,310 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_31_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,349 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_32_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,387 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_33_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,425 - src.model_loader - WARNING - Failed to process dataset/saad\WIN_20251118_18_16_35_Pro.jpg for saad: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,465 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_45_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,504 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_46_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,543 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_56_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,581 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_14_58_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,620 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_29_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,659 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_30_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,698 - src.model_loader - WARNING - Failed to process dataset/sandeep\WIN_20251118_18_22_32_Pro.jpg for sandeep: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,736 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_45_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,774 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_46_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,812 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_48_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,850 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_49_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,888 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_50_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,926 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_52_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:47,964 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_53_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,002 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_55_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,040 - src.model_loader - WARNING - Failed to process dataset/saurabh\WIN_20251118_18_12_57_Pro.jpg for saurabh: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,079 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_04_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,116 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_13_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,155 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_16_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,193 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_17_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,231 - src.model_loader - WARNING - Failed to process dataset/shoib\WIN_20251118_18_17_18_Pro.jpg for shoib: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,272 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_39_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,313 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_46_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,353 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_48_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,393 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_49_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,434 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_50_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,474 - src.model_loader - WARNING - Failed to process dataset/uday\WIN_20251118_18_17_51_Pro.jpg for uday: 'FaceProcessor' object has no attribute 'arcface_model'
+2025-11-20 17:55:48,514 - root - INFO - Shutdown requested by user.
+2025-11-20 17:55:48,519 - root - INFO - Application shutting down.
+2025-11-20 17:59:20,629 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 17:59:20,630 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 17:59:20,697 - src.model_loader - INFO - CUDA not available, using CPU
+2025-11-20 17:59:23,315 - src.face_processor - INFO - Trying insightface.model_zoo.get_model('antelopev2') ...
+2025-11-20 17:59:26,148 - src.face_processor - INFO - Loaded InsightFace model 'antelopev2' on GPU (ctx_id=0).
+2025-11-20 17:59:26,150 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface, device=gpu
+2025-11-20 17:59:26,150 - src.model_loader - INFO - Building reference face database...
+2025-11-20 17:59:49,764 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 18:00:07,166 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 18:00:22,369 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 18:00:42,043 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 18:00:53,012 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 18:01:10,579 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 18:01:26,224 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 18:01:26,225 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 18:01:26,227 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 18:01:26,233 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 8100
+2025-11-20 18:01:31,226 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 18:01:40,617 - src.video_stream - INFO - Video stream connected.
+2025-11-20 18:01:49,327 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:01:49,470 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:01:49,608 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:01:49,745 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:01:49,883 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:01:51,096 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:01:51,236 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:01:51,374 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:01:51,512 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:02:08,985 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:02:09,129 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:02:09,271 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:02:09,415 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:02:12,191 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:02:13,899 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 18:02:13,916 - root - INFO - Application shutting down.
+2025-11-20 18:02:13,931 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 18:02:13,958 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 18:04:57,290 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 18:04:57,291 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 18:04:57,360 - src.model_loader - INFO - CUDA not available, using CPU
+2025-11-20 18:04:59,641 - src.face_processor - INFO - Trying insightface.model_zoo.get_model('antelopev2') ...
+2025-11-20 18:05:02,491 - src.face_processor - INFO - Loaded InsightFace model 'antelopev2' on GPU (ctx_id=0).
+2025-11-20 18:05:02,491 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface, device=gpu
+2025-11-20 18:05:02,492 - src.model_loader - INFO - Building reference face database...
+2025-11-20 18:05:25,765 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 18:05:43,279 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 18:05:58,463 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 18:06:17,976 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 18:06:28,941 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 18:06:46,355 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 18:07:01,570 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 18:07:01,571 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 18:07:01,573 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 18:07:01,579 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 3620
+2025-11-20 18:07:06,574 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 18:07:17,418 - src.video_stream - INFO - Video stream connected.
+2025-11-20 18:08:23,946 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:24,086 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:24,227 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:24,365 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:24,503 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:24,645 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:27,688 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:27,827 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:27,966 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:28,104 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:28,245 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:28,385 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:28,525 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:28,664 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:28,801 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:28,940 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:29,079 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:29,217 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:29,353 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:29,491 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:29,628 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:29,765 - src.face_processor - WARNING - InsightFace model present but embedding extraction failed (unknown API).
+2025-11-20 18:08:32,418 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 18:08:32,431 - root - INFO - Application shutting down.
+2025-11-20 18:08:32,446 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 18:08:32,470 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 18:16:49,594 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 18:16:49,595 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 18:16:49,672 - src.model_loader - INFO - CUDA not available, using CPU
+2025-11-20 18:16:51,926 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-20 18:16:57,301 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-20 18:16:57,302 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-20 18:16:57,302 - src.model_loader - INFO - Building reference face database...
+2025-11-20 18:17:20,386 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 18:17:37,653 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 18:17:52,626 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 18:18:11,992 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 18:18:22,827 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 18:18:40,305 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 18:18:55,586 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 18:18:55,587 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 18:18:55,589 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 18:18:55,597 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 13832
+2025-11-20 18:19:00,589 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 18:19:11,905 - src.video_stream - INFO - Video stream connected.
+2025-11-20 18:19:28,549 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251120_181928.jpg
+2025-11-20 18:19:32,637 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251120_181932.jpg
+2025-11-20 18:19:50,666 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251120_181950.jpg
+2025-11-20 18:21:16,227 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_5_20251120_182116.jpg
+2025-11-20 18:21:30,152 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_5_20251120_182130.jpg
+2025-11-20 18:22:32,888 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 18:22:32,904 - root - INFO - Application shutting down.
+2025-11-20 18:22:33,017 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 18:22:33,051 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 18:24:02,130 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 18:24:02,131 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 18:24:02,201 - src.model_loader - INFO - CUDA not available, using CPU
+2025-11-20 18:24:04,522 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-20 18:24:09,170 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-20 18:24:09,170 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-20 18:24:09,171 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-20 18:24:17,329 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 18:24:17,987 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 18:24:18,569 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 18:24:19,338 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 18:24:19,790 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 18:24:20,506 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 18:24:21,121 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 18:24:21,121 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 18:24:21,124 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 18:24:21,134 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 11276
+2025-11-20 18:24:26,125 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 18:24:37,248 - src.video_stream - INFO - Video stream connected.
+2025-11-20 18:24:44,626 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-20 18:24:44
+2025-11-20 18:25:09,880 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251120_182509.jpg
+2025-11-20 18:25:33,774 - src.attendance_manager - INFO - ATTENDANCE: sandeep marked at 2025-11-20 18:25:33
+2025-11-20 18:25:44,776 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 18:25:44,795 - root - INFO - Application shutting down.
+2025-11-20 18:25:44,893 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 18:25:44,913 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 18:55:17,571 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 18:55:17,571 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 18:55:17,897 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-20 18:55:20,037 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-20 18:55:24,475 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-20 18:55:24,476 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-20 18:55:24,476 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-20 18:55:33,138 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 18:55:33,780 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 18:55:34,356 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 18:55:35,127 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 18:55:35,560 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 18:55:36,271 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 18:55:36,887 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 18:55:36,887 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 18:55:36,890 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 18:55:36,901 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 13880
+2025-11-20 18:55:41,890 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 18:55:53,736 - src.video_stream - INFO - Video stream connected.
+2025-11-20 18:56:45,420 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-20 18:56:45
+2025-11-20 18:57:52,959 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-20 18:57:52
+2025-11-20 18:57:54,801 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_4_20251120_185754.jpg
+2025-11-20 18:58:03,909 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 18:58:03,928 - root - INFO - Application shutting down.
+2025-11-20 18:58:04,025 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 18:58:04,045 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 19:07:41,250 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 19:07:41,250 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 19:07:41,580 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-20 19:07:43,744 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-20 19:07:48,159 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-20 19:07:48,160 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-20 19:07:48,161 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-20 19:07:56,889 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 19:07:57,533 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 19:07:58,100 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 19:07:58,851 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 19:07:59,277 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 19:07:59,978 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 19:08:00,582 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 19:08:00,583 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 19:08:00,586 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 19:08:00,596 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 18372
+2025-11-20 19:08:05,586 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 19:08:18,548 - src.video_stream - INFO - Video stream connected.
+2025-11-20 19:08:18,826 - src.video_stream - WARNING - Stream disconnected. Reconnecting...
+2025-11-20 19:08:28,831 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 19:08:39,990 - src.video_stream - INFO - Video stream connected.
+2025-11-20 19:08:45,184 - root - INFO - Wrote debug face: debug_aligned_faces/pid_1_yid_1_frame_84_lap567_sob63.jpg
+2025-11-20 19:08:45,236 - root - INFO - Wrote debug face: debug_aligned_faces/pid_1_yid_1_frame_85_lap527_sob64.jpg
+2025-11-20 19:08:45,393 - root - INFO - Wrote debug face: debug_aligned_faces/pid_1_yid_1_frame_86_lap529_sob63.jpg
+2025-11-20 19:08:45,395 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-20 19:08:45
+2025-11-20 19:08:45,451 - root - INFO - Wrote debug face: debug_aligned_faces/pid_1_yid_1_frame_87_lap542_sob63.jpg
+2025-11-20 19:08:45,557 - root - INFO - Wrote debug face: debug_aligned_faces/pid_1_yid_1_frame_88_lap527_sob63.jpg
+2025-11-20 19:08:51,048 - root - INFO - Wrote debug face: debug_aligned_faces/pid_1_yid_1_frame_179_lap541_sob63.jpg
+2025-11-20 19:08:51,104 - root - INFO - Wrote debug face: debug_aligned_faces/pid_1_yid_1_frame_180_lap546_sob64.jpg
+2025-11-20 19:08:51,266 - root - INFO - Wrote debug face: debug_aligned_faces/pid_1_yid_1_frame_181_lap537_sob64.jpg
+2025-11-20 19:08:56,641 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 19:08:56,661 - root - INFO - Application shutting down.
+2025-11-20 19:08:56,759 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 19:08:56,779 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 19:10:25,617 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 19:10:25,618 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 19:10:25,943 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-20 19:10:28,151 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-20 19:10:32,528 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-20 19:10:32,528 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-20 19:10:32,529 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-20 19:10:41,231 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 19:10:41,880 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 19:10:42,454 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 19:10:43,217 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 19:10:43,652 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 19:10:44,365 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 19:10:44,975 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 19:10:44,976 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 19:10:44,979 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 19:10:44,990 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 5968
+2025-11-20 19:10:49,979 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 19:11:01,817 - src.video_stream - INFO - Video stream connected.
+2025-11-20 19:11:39,367 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-20 19:11:39
+2025-11-20 19:11:51,210 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 19:11:51,230 - root - INFO - Application shutting down.
+2025-11-20 19:11:51,324 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 19:11:51,344 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 19:38:04,147 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 19:38:04,148 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 19:38:04,470 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-20 19:38:06,621 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-20 19:38:11,096 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-20 19:38:11,097 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-20 19:38:11,098 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-20 19:38:19,760 - src.model_loader - INFO - Processed abc with 10 images.
+2025-11-20 19:38:19,761 - src.model_loader - WARNING - No images found for pqr, skipping.
+2025-11-20 19:38:20,324 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 19:38:20,964 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 19:38:21,552 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 19:38:22,302 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 19:38:22,729 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 19:38:23,432 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 19:38:24,046 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 19:38:24,047 - src.model_loader - INFO - Reference database built. 8 people found.
+2025-11-20 19:38:24,050 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 19:38:24,060 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 12392
+2025-11-20 19:38:29,050 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 19:38:40,459 - src.video_stream - INFO - Video stream connected.
+2025-11-20 19:39:16,928 - src.attendance_manager - INFO - ATTENDANCE: vaibhav marked at 2025-11-20 19:39:16
+2025-11-20 19:39:24,010 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-20 19:39:24
+2025-11-20 19:39:49,003 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_11_20251120_193949.jpg
+2025-11-20 19:39:49,516 - src.attendance_manager - INFO - ATTENDANCE: sandeep marked at 2025-11-20 19:39:49
+2025-11-20 19:40:10,438 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_10_20251120_194010.jpg
+2025-11-20 19:40:33,986 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251120_194033.jpg
+2025-11-20 19:40:55,473 - src.attendance_manager - INFO - ATTENDANCE: vaibhav marked at 2025-11-20 19:40:55
+2025-11-20 19:41:55,648 - src.attendance_manager - INFO - ATTENDANCE: vaibhav marked at 2025-11-20 19:41:55
+2025-11-20 19:42:12,212 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251120_194212.jpg
+2025-11-20 19:42:35,545 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_10_20251120_194235.jpg
+2025-11-20 19:42:56,744 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 19:42:56,764 - root - INFO - Application shutting down.
+2025-11-20 19:42:56,883 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 19:42:56,919 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 19:59:21,498 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 19:59:21,499 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 19:59:21,824 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-20 19:59:24,397 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-20 19:59:28,993 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-20 19:59:28,993 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-20 19:59:28,994 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-20 19:59:37,767 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 19:59:38,425 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 19:59:39,009 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 19:59:39,773 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 19:59:40,204 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 19:59:40,912 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 19:59:41,522 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 19:59:41,523 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 19:59:41,525 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 19:59:41,536 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 2804
+2025-11-20 19:59:46,525 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 19:59:57,840 - src.video_stream - INFO - Video stream connected.
+2025-11-20 20:00:53,334 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 20:00:53,357 - root - INFO - Application shutting down.
+2025-11-20 20:00:53,458 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 20:00:53,478 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-20 20:01:20,481 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-20 20:01:20,482 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-20 20:01:20,807 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-20 20:01:23,363 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-20 20:01:27,866 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-20 20:01:27,867 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-20 20:01:27,867 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-20 20:01:36,731 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-20 20:01:37,385 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-20 20:01:37,990 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-20 20:01:38,731 - src.model_loader - INFO - Processed saurabh with 9 images.
+2025-11-20 20:01:39,164 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-20 20:01:39,868 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-20 20:01:40,468 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-20 20:01:40,468 - src.model_loader - INFO - Reference database built. 7 people found.
+2025-11-20 20:01:40,471 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-20 20:01:40,482 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 12712
+2025-11-20 20:01:45,471 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-20 20:01:57,327 - src.video_stream - INFO - Video stream connected.
+2025-11-20 20:02:08,060 - src.attendance_manager - INFO - ATTENDANCE: sandeep marked at 2025-11-20 20:02:08
+2025-11-20 20:02:15,830 - src.attendance_manager - INFO - ATTENDANCE: saurabh marked at 2025-11-20 20:02:15
+2025-11-20 20:02:34,892 - src.video_stream - INFO - Video stream stopped.
+2025-11-20 20:02:34,911 - root - INFO - Application shutting down.
+2025-11-20 20:02:35,029 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-20 20:02:35,051 - src.mediapipe_client - INFO - MediaPipe worker stopped

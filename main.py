@@ -19,6 +19,8 @@ from src.face_validator import FaceValidator
 def main():
     try:
         config = load_config('config.ini')
+        os.makedirs(config.get('Paths','debug_aligned_faces_path', fallback='debug_aligned_faces/'), exist_ok=True)
+
         logger = setup_logging(config)
     except Exception as e:
         print(f"FATAL: Failed to load config or setup logger: {e}")
@@ -286,6 +288,24 @@ def main():
                         # embedding failed
                         tracked_faces[pid]['match_count'] = 0
                         smoothed_embedding = None
+
+                    # --- DEBUG SAVE: write aligned/preprocessed face for inspection ---
+                    if config.getboolean('Logging', 'debug_save_faces', fallback=False):
+                        try:
+                            debug_path = config.get('Paths', 'debug_aligned_faces_path', fallback='debug_aligned_faces/')
+                            os.makedirs(debug_path, exist_ok=True)
+                            # safe yolo_id retrieval
+                            yid_for_name = int(yolo_id) if 'yolo_id' in locals() else int(track_ids[0]) if len(track_ids)>0 else -1
+                            lap = int(aligned_blur) if 'aligned_blur' in locals() else 0
+                            sob = int(sobel_score) if ('sobel_score' in locals() and sobel_score is not None) else 0
+                            dbg_fn = os.path.join(debug_path, f"pid_{pid}_yid_{yid_for_name}_frame_{frame_num}_lap{lap}_sob{sob}.jpg")
+                            ok = cv2.imwrite(dbg_fn, preprocessed_face)
+                            # if ok:
+                            #     logger.info(f"Wrote debug face: {dbg_fn}")
+                            # else:
+                            #     logger.warning(f"Failed to write debug face: {dbg_fn}")
+                        except Exception as e:
+                            logger.warning(f"Exception while saving debug face: {e}")
 
                     if smoothed_embedding is not None:
                         name, similarity = att_manager.find_match(smoothed_embedding)

@@ -5,6 +5,7 @@ import logging
 import time
 import numpy as np
 from datetime import datetime
+import torch
 
 logger = logging.getLogger(__name__)
 
@@ -38,9 +39,16 @@ class AttendanceManager:
         """Finds the best match in the reference database."""
         if not self.known_names:
             return "Unknown", 0.0
+        
+        if torch.cuda.is_available():
+                q = torch.from_numpy(query_embedding).to('cuda:0').unsqueeze(0) # 1xd
+                refs = torch.from_numpy(self.known_embeddings).to('cuda:0')    # nxd
+                sims = torch.matmul(q, refs.T).squeeze(0).cpu().numpy()
+        else:
+                sims = np.dot(query_embedding, self.known_embeddings.T)
             
         # Calculate cosine similarity
-        sims = np.dot(query_embedding, self.known_embeddings.T)
+        # sims = np.dot(query_embedding, self.known_embeddings.T)
         
         best_match_idx = np.argmax(sims)
         best_similarity = sims[best_match_idx]
