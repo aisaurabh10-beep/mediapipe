@@ -20856,3 +20856,380 @@ AttributeError: cannot import name 'float4_e2m1fn' from 'ml_dtypes'
 2025-11-20 20:02:34,911 - root - INFO - Application shutting down.
 2025-11-20 20:02:35,029 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
 2025-11-20 20:02:35,051 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 11:04:48,789 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 11:04:48,790 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 11:04:49,394 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 11:04:51,851 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 11:05:00,967 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 11:05:00,968 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 11:05:00,969 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 11:05:11,362 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 11:05:11,770 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 11:05:12,376 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 11:05:13,050 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 11:05:13,820 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 11:05:14,548 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 11:05:15,085 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 11:05:15,783 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 11:05:16,584 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 11:05:17,268 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 11:05:17,269 - src.model_loader - INFO - Reference database built. 10 people found.
+2025-11-22 11:05:17,272 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 11:05:17,286 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 2320
+2025-11-22 11:05:17,301 - src.api_server - INFO - Started registration API at http://0.0.0.0:8001
+2025-11-22 11:05:22,274 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 11:05:33,392 - src.video_stream - INFO - Video stream connected.
+2025-11-22 11:05:39,107 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251122_110539.jpg
+2025-11-22 11:08:06,909 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_7_20251122_110806.jpg
+2025-11-22 11:09:05,571 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_7_20251122_110905.jpg
+2025-11-22 11:09:15,630 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_7_20251122_110915.jpg
+2025-11-22 11:09:24,144 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 11:09:24,161 - root - INFO - Application shutting down.
+2025-11-22 11:09:24,163 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 11:09:24,201 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 11:59:49,071 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 11:59:49,072 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 11:59:49,433 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 11:59:51,360 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 11:59:56,162 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 11:59:56,162 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 11:59:56,163 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 12:00:04,818 - src.model_loader - INFO - Processed 9696 with 9 images.
+2025-11-22 12:00:05,689 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 12:00:06,041 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 12:00:06,624 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 12:00:07,185 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 12:00:07,840 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 12:00:08,413 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 12:00:08,828 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 12:00:09,476 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 12:00:10,135 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 12:00:10,690 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 12:00:10,691 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 12:00:10,694 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 12:00:10,706 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 14564
+2025-11-22 12:00:10,718 - src.api_server - INFO - Started registration API at http://0.0.0.0:8001
+2025-11-22 12:00:15,695 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 12:00:26,925 - src.video_stream - INFO - Video stream connected.
+2025-11-22 12:01:17,056 - src.attendance_manager - INFO - ATTENDANCE DB: 9696 (690eddd4b043c7d0052b13e9) marked at 2025-11-22 12:01:17
+2025-11-22 12:01:21,634 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 12:01:21,651 - root - INFO - Application shutting down.
+2025-11-22 12:01:21,652 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 12:01:21,684 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 12:23:33,651 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 12:23:33,652 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 12:23:34,029 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 12:23:36,538 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 12:23:42,384 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 12:23:42,385 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 12:23:42,387 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 12:23:51,408 - src.model_loader - INFO - Processed 9696 with 9 images.
+2025-11-22 12:23:52,277 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 12:23:52,632 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 12:23:53,221 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 12:23:53,897 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 12:23:54,700 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 12:23:55,398 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 12:23:55,918 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 12:23:56,613 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 12:23:57,414 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 12:23:58,098 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 12:23:58,099 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 12:23:58,102 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 12:23:58,112 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 1480
+2025-11-22 12:24:03,102 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 12:24:14,511 - src.video_stream - INFO - Video stream connected.
+2025-11-22 12:26:27,235 - src.attendance_manager - INFO - ATTENDANCE DB: Saurabh (9696) marked at 2025-11-22 12:26:27 [yolo_conf=0.860200822353363, sim=0.9033531546592712]
+2025-11-22 12:26:33,100 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 12:26:33,120 - root - INFO - Application shutting down.
+2025-11-22 12:26:33,209 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 12:26:33,228 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 12:54:26,791 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 12:54:26,792 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 12:54:27,097 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 12:54:29,532 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 12:54:34,109 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 12:54:34,110 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 12:54:34,110 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 12:54:42,027 - src.model_loader - INFO - Processed 1 with 9 images.
+2025-11-22 12:54:42,865 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 12:54:43,207 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 12:54:43,772 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 12:54:44,323 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 12:54:44,953 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 12:54:45,529 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 12:54:46,022 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 12:54:46,653 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 12:54:47,298 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 12:54:47,843 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 12:54:47,844 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 12:54:47,846 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 12:54:47,853 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 12816
+2025-11-22 12:54:47,853 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 12:54:47,855 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 12:54:52,847 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 12:54:58,425 - root - INFO - Shutdown requested by user.
+2025-11-22 12:55:02,337 - src.video_stream - INFO - Video stream connected.
+2025-11-22 12:55:02,344 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 12:55:02,362 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 12:58:03,686 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 12:58:03,686 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 12:58:03,997 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 12:58:05,860 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 12:58:11,139 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 12:58:11,140 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 12:58:11,140 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 12:58:19,328 - src.model_loader - INFO - Processed 1 with 9 images.
+2025-11-22 12:58:20,198 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 12:58:20,680 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 12:58:21,438 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 12:58:21,995 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 12:58:22,644 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 12:58:23,219 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 12:58:23,641 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 12:58:24,281 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 12:58:24,934 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 12:58:25,489 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 12:58:25,490 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 12:58:25,492 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 12:58:25,499 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 18348
+2025-11-22 12:58:25,499 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 12:58:25,501 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 12:58:30,493 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 12:58:35,826 - root - INFO - Shutdown requested by user.
+2025-11-22 12:58:40,015 - src.video_stream - INFO - Video stream connected.
+2025-11-22 12:58:40,019 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 12:58:40,024 - root - INFO - Application shutting down.
+2025-11-22 12:58:40,025 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 12:58:40,043 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 12:59:02,235 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 12:59:02,236 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 12:59:02,549 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 12:59:04,370 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 12:59:08,927 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 12:59:08,927 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 12:59:08,928 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 12:59:17,203 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 12:59:17,675 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 12:59:18,248 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 12:59:18,801 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 12:59:19,440 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 12:59:19,996 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 12:59:20,406 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 12:59:21,027 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 12:59:21,673 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 12:59:22,219 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 12:59:22,219 - src.model_loader - INFO - Reference database built. 10 people found.
+2025-11-22 12:59:22,222 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 12:59:22,228 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 16712
+2025-11-22 12:59:22,229 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 12:59:22,230 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 12:59:27,222 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 12:59:36,695 - src.video_stream - INFO - Video stream connected.
+2025-11-22 13:01:34,275 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251122_130134.jpg
+2025-11-22 13:02:35,640 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_6_20251122_130235.jpg
+2025-11-22 13:02:46,859 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_6_20251122_130246.jpg
+2025-11-22 13:04:26,795 - register_api - INFO - Register: processing 9696
+2025-11-22 13:04:27,782 - src.attendance_manager - INFO - Added identity in-memory: 9696 (), total=11
+2025-11-22 13:04:27,783 - register_api - INFO - Register: done for 9696 (images_used=9)
+2025-11-22 13:04:52,589 - register_api - INFO - Register: processing 9696
+2025-11-22 13:04:53,491 - src.attendance_manager - INFO - add_identity: 9696 already exists — replacing embedding.
+2025-11-22 13:04:53,493 - src.attendance_manager - INFO - Added identity in-memory: 9696 (), total=11
+2025-11-22 13:04:53,494 - register_api - INFO - Register: done for 9696 (images_used=9)
+2025-11-22 13:05:35,370 - src.attendance_manager - INFO - ATTENDANCE DB: saurabh (9696) marked at 2025-11-22 13:05:35 [yolo_conf=0.864210307598114, sim=0.8708464503288269]
+2025-11-22 13:06:06,895 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 13:06:06,914 - root - INFO - Application shutting down.
+2025-11-22 13:06:06,915 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 13:06:06,944 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 13:24:17,405 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 13:24:17,406 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 13:24:17,741 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 13:24:19,946 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 13:24:24,455 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 13:24:24,456 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 13:24:24,456 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 13:24:33,081 - src.model_loader - INFO - Processed 9696 with 9 images.
+2025-11-22 13:24:33,935 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 13:24:34,285 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 13:24:34,854 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 13:24:35,405 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 13:24:36,039 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 13:24:36,603 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 13:24:37,017 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 13:24:37,917 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 13:24:38,702 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 13:24:39,285 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 13:24:39,286 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 13:24:39,288 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 13:24:39,295 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 14600
+2025-11-22 13:24:39,296 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 13:24:39,297 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 13:24:44,289 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 13:24:55,368 - src.video_stream - INFO - Video stream connected.
+2025-11-22 13:26:57,512 - src.attendance_manager - WARNING - Attendance API call failed (url=http://127.0.0.1:5000/mark_attendance   # or your real endpoint): HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /mark_attendance%20%20%20 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017656633590>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')). Falling back to direct DB insert.
+2025-11-22 13:26:57,522 - src.attendance_manager - INFO - ATTENDANCE DB (fallback): saurabh (9696) marked at 2025-11-22 13:26:55
+2025-11-22 13:27:58,888 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 13:27:58,904 - root - INFO - Application shutting down.
+2025-11-22 13:27:58,906 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 13:27:58,927 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 13:34:53,842 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 13:34:53,843 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 13:34:54,160 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 13:34:56,448 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 13:35:01,047 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 13:35:01,047 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 13:35:01,048 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 13:35:09,565 - src.model_loader - INFO - Processed 9696 with 9 images.
+2025-11-22 13:35:10,431 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 13:35:10,912 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 13:35:11,704 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 13:35:12,371 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 13:35:13,024 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 13:35:13,619 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 13:35:14,044 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 13:35:14,693 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 13:35:15,478 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 13:35:16,038 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 13:35:16,038 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 13:35:16,041 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 13:35:16,047 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 4984
+2025-11-22 13:35:16,048 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 13:35:16,049 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 13:35:21,041 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 13:35:31,441 - src.video_stream - INFO - Video stream connected.
+2025-11-22 13:35:44,166 - src.attendance_manager - WARNING - Attendance API returned 422: {"detail":[{"type":"missing","loc":["body","student_id"],"msg":"Field required","input":{"studentId":"690eddd4b043c7d0052b13e9","firstName":"saurabh","entryTime":"2025-11-22T13:35:44.102544","detector_confidence":0.8697666525840759,"face_similarity":0.854388415813446,"source":"camera_pipeline"}},{"type":"missing","loc":["body","yolo_confidence"],"msg":"Field required","input":{"studentId":"690eddd4b043c7d0052b13e9","firstName":"saurabh","entryTime":"2025-11-22T13:35:44.102544","detector_confidence":0.8697666525840759,"face_similarity":0.854388415813446,"source":"camera_pipeline"}},{"type":"missing","loc":["body","deepface_distance"],"msg":"Field required","input":{"studentId":"690eddd4b043c7d0052b13e9","firstName":"saurabh","entryTime":"2025-11-22T13:35:44.102544","detector_confidence":0.8697666525840759,"face_similarity":0.854388415813446,"source":"camera_pipeline"}}]}. Falling back to DB.
+2025-11-22 13:35:44,173 - src.attendance_manager - INFO - ATTENDANCE DB (fallback): saurabh (9696) marked at 2025-11-22 13:35:44
+2025-11-22 13:36:23,002 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 13:36:23,020 - root - INFO - Application shutting down.
+2025-11-22 13:36:23,022 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 13:36:23,049 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 13:38:31,936 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 13:38:31,937 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 13:38:32,257 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 13:38:34,134 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 13:38:38,689 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 13:38:38,690 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 13:38:38,691 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 13:38:47,083 - src.model_loader - INFO - Processed 9696 with 9 images.
+2025-11-22 13:38:47,944 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 13:38:48,288 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 13:38:48,859 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 13:38:49,432 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 13:38:50,066 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 13:38:50,744 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 13:38:51,196 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 13:38:51,835 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 13:38:52,487 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 13:38:53,045 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 13:38:53,046 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 13:38:53,048 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 13:38:53,059 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 12884
+2025-11-22 13:38:53,060 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 13:38:53,062 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 13:38:58,049 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 13:39:08,462 - src.video_stream - INFO - Video stream connected.
+2025-11-22 13:41:17,120 - src.attendance_manager - WARNING - Attendance API returned 422: {"detail":[{"type":"missing","loc":["body","student_id"],"msg":"Field required","input":{"studentId":"690eddd4b043c7d0052b13e9","firstName":"saurabh","entryTime":"2025-11-22T13:41:17.077858","detector_confidence":0.8641722202301025,"face_similarity":0.8887038826942444,"source":"camera_pipeline"}},{"type":"missing","loc":["body","yolo_confidence"],"msg":"Field required","input":{"studentId":"690eddd4b043c7d0052b13e9","firstName":"saurabh","entryTime":"2025-11-22T13:41:17.077858","detector_confidence":0.8641722202301025,"face_similarity":0.8887038826942444,"source":"camera_pipeline"}},{"type":"missing","loc":["body","deepface_distance"],"msg":"Field required","input":{"studentId":"690eddd4b043c7d0052b13e9","firstName":"saurabh","entryTime":"2025-11-22T13:41:17.077858","detector_confidence":0.8641722202301025,"face_similarity":0.8887038826942444,"source":"camera_pipeline"}}]}. Falling back to DB.
+2025-11-22 13:41:17,128 - src.attendance_manager - WARNING - Failed to write attendance CSV backup after fallback DB insert: 'detector_confidence'
+2025-11-22 13:41:17,129 - src.attendance_manager - INFO - ATTENDANCE DB (fallback): saurabh (9696) marked at 2025-11-22 13:41:17
+2025-11-22 13:42:32,212 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 13:42:32,228 - root - INFO - Application shutting down.
+2025-11-22 13:42:32,229 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 13:42:32,252 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 13:43:43,125 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 13:43:43,126 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 13:43:43,459 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 13:43:45,250 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 13:43:49,808 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 13:43:49,809 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 13:43:49,809 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 13:43:58,137 - src.model_loader - INFO - Processed 9696 with 9 images.
+2025-11-22 13:43:59,184 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 13:43:59,529 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 13:44:00,090 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 13:44:00,639 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 13:44:01,268 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 13:44:01,830 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 13:44:02,238 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 13:44:02,854 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 13:44:03,497 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 13:44:04,042 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 13:44:04,042 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 13:44:04,045 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 13:44:04,053 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 15676
+2025-11-22 13:44:04,054 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 13:44:04,055 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 13:44:09,046 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 13:44:19,388 - src.video_stream - INFO - Video stream connected.
+2025-11-22 13:44:24,134 - src.attendance_manager - WARNING - Failed to write attendance CSV backup after API success: 'detector_confidence'
+2025-11-22 13:44:24,135 - src.attendance_manager - INFO - ATTENDANCE API: saurabh (9696) recorded via API http://127.0.0.1:5000/mark_attendance at 2025-11-22 13:44:24
+2025-11-22 13:47:34,500 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 13:47:34,516 - root - INFO - Application shutting down.
+2025-11-22 13:47:34,517 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 13:47:34,545 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 13:47:52,758 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 13:47:52,759 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 13:47:53,079 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 13:47:54,944 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 13:47:59,675 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 13:47:59,675 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 13:47:59,676 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 13:48:08,141 - src.model_loader - INFO - Processed 9696 with 9 images.
+2025-11-22 13:48:09,025 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 13:48:09,383 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 13:48:09,972 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 13:48:10,534 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 13:48:11,195 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 13:48:11,778 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 13:48:12,205 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 13:48:12,869 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 13:48:13,530 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 13:48:14,096 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 13:48:14,097 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 13:48:14,100 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 13:48:14,112 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 15828
+2025-11-22 13:48:14,113 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 13:48:14,115 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 13:48:19,101 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 13:48:30,429 - src.video_stream - INFO - Video stream connected.
+2025-11-22 13:49:44,486 - src.attendance_manager - INFO - ATTENDANCE API: saurabh (9696) recorded via API http://127.0.0.1:5000/mark_attendance at 2025-11-22 13:49:44
+2025-11-22 13:49:50,758 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 13:49:50,776 - root - INFO - Application shutting down.
+2025-11-22 13:49:50,778 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 13:49:50,809 - src.mediapipe_client - INFO - MediaPipe worker stopped
+2025-11-22 14:10:45,659 - root - INFO - Logging configured - console shows attendance logs, hides rejection spam
+2025-11-22 14:10:45,660 - src.model_loader - INFO - Loading YOLO model from models/yolov8n-face-lindevs.pt ...
+2025-11-22 14:10:46,023 - src.model_loader - INFO - Moved YOLO model to cuda:0
+2025-11-22 14:10:48,278 - src.face_processor - INFO - Attempting to load insightface FaceAnalysis('antelopev2') ...
+2025-11-22 14:10:53,150 - src.face_processor - INFO - Loaded FaceAnalysis('antelopev2') on GPU (ctx_id=0).
+2025-11-22 14:10:53,151 - src.face_processor - INFO - FaceProcessor initialized. backend=insightface_faceanalysis, device=gpu
+2025-11-22 14:10:53,151 - src.model_loader - INFO - Building reference face database (using face_processor.get_embedding)...
+2025-11-22 14:11:02,081 - src.model_loader - INFO - Processed 9696 with 9 images.
+2025-11-22 14:11:02,942 - src.model_loader - INFO - Processed Aniket with 22 images.
+2025-11-22 14:11:03,289 - src.model_loader - INFO - Processed rajesh with 9 images.
+2025-11-22 14:11:03,863 - src.model_loader - INFO - Processed Rashi with 15 images.
+2025-11-22 14:11:04,538 - src.model_loader - INFO - Processed rihan with 7 images.
+2025-11-22 14:11:05,207 - src.model_loader - INFO - Processed saad with 8 images.
+2025-11-22 14:11:05,775 - src.model_loader - INFO - Processed sandeep with 7 images.
+2025-11-22 14:11:06,188 - src.model_loader - INFO - Processed shoib with 5 images.
+2025-11-22 14:11:06,818 - src.model_loader - INFO - Processed somnath with 16 images.
+2025-11-22 14:11:07,469 - src.model_loader - INFO - Processed uday with 8 images.
+2025-11-22 14:11:08,019 - src.model_loader - INFO - Processed vaibhav with 7 images.
+2025-11-22 14:11:08,020 - src.model_loader - INFO - Reference database built. 11 people found.
+2025-11-22 14:11:08,022 - src.mediapipe_client - INFO - Starting MediaPipe worker: C:\Users\Frames\anaconda3\envs\visionpipe\python.exe src\mediapipe_worker.py
+2025-11-22 14:11:08,032 - src.mediapipe_client - INFO - MediaPipe worker started with PID: 11028
+2025-11-22 14:11:08,033 - register_api - INFO - Register API initialized with processor & att_manager
+2025-11-22 14:11:08,035 - root - INFO - Register API started on port 8000 (threaded).
+2025-11-22 14:11:13,023 - src.video_stream - INFO - Connecting to video stream: 0...
+2025-11-22 14:11:24,256 - src.video_stream - INFO - Video stream connected.
+2025-11-22 14:11:31,191 - src.attendance_manager - INFO - ATTENDANCE API: saurabh (9696) recorded via API http://127.0.0.1:5000/mark_attendance at 2025-11-22 14:11:31
+2025-11-22 14:12:03,124 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_1_20251122_141203.jpg
+2025-11-22 14:14:04,699 - src.attendance_manager - WARNING - Student 'vaibhav' not found in 'students' collection — skipping attendance.
+2025-11-22 14:14:42,531 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251122_141442.jpg
+2025-11-22 14:14:56,002 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_2_20251122_141456.jpg
+2025-11-22 14:15:14,628 - src.attendance_manager - INFO - Added identity in-memory: 100 (Vaibhav), total=12
+2025-11-22 14:15:48,626 - src.attendance_manager - INFO - Saved unknown face to unknown_faces/unknown_23_20251122_141548.jpg
+2025-11-22 14:16:05,556 - root - INFO - Shutdown requested by user.
+2025-11-22 14:16:05,897 - src.video_stream - INFO - Video stream stopped.
+2025-11-22 14:16:05,906 - root - INFO - Application shutting down.
+2025-11-22 14:16:05,908 - src.mediapipe_client - INFO - Stopping MediaPipe worker...
+2025-11-22 14:16:05,909 - src.mediapipe_client - INFO - MediaPipe worker stopped

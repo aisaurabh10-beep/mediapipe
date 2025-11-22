@@ -15,6 +15,9 @@ from src.mediapipe_client import MediaPipeClient
 from src.face_processor import FaceProcessor
 from src.attendance_manager import AttendanceManager
 from src.face_validator import FaceValidator
+import threading, uvicorn
+from src.register_api import init_api, app as register_app  # path adjust if you placed file in src/
+
 
 def main():
     try:
@@ -34,6 +37,25 @@ def main():
         stream = VideoStream(config)
         mp_client = MediaPipeClient(config)
         att_manager = AttendanceManager(config, reference_db)
+
+
+        
+        # ============================================================
+        # START REGISTER API (Dynamic Registration – No Restart)
+        # ============================================================
+        init_api(face_processor, att_manager, config)
+
+        def _run_api():
+            uvicorn.run("src.register_api:app", host="0.0.0.0", port=8000, log_level="info")
+
+        api_thread = threading.Thread(target=_run_api, daemon=True)
+        api_thread.start()
+
+        logger.info("Register API started on port 8000 (threaded).")
+        # ============================================================
+
+
+
 
         # Config params
         yolo_conf = config.getfloat('Model_Settings', 'yolo_conf_threshold')
@@ -105,7 +127,8 @@ def main():
                 # Build reverse map for quick lookup of current pids
                 current_pids = [yolo_to_pid[yid] for yid in current_yolo_ids]
 
-                for box, yolo_id in zip(boxes, track_ids):
+                # for box, yolo_id in zip(boxes, track_ids):
+                for i, (box, yolo_id) in enumerate(zip(boxes, track_ids)):
                     pid = yolo_to_pid[int(yolo_id)]
                     x1, y1, x2, y2 = int(box[0]), int(box[1]), int(box[2]), int(box[3])
 
@@ -324,7 +347,27 @@ def main():
                                 last_confirmed = tracked_faces[pid].get('last_confirmed')
                                 now_ts = time.time()
                                 if last_confirmed is None or (now_ts - last_confirmed) > max(1.0, att_manager.mark_cooldown - 1):
-                                    success = att_manager.mark_attendance(name)
+
+
+
+                                    # try to fetch YOLO detection confidence for this box (results[0].boxes.conf aligned with boxes)
+                                    yolo_conf_val = None
+                                    try:
+                                        # results[0].boxes.conf is a tensor aligned with boxes
+                                        if hasattr(results[0].boxes, "conf"):
+                                            confs = results[0].boxes.conf.cpu().numpy()
+                                            # boxed loop index alignment: ensure index matches current detection index
+                                            # if you are iterating in same order as 'boxes' then use the iteration index `i`
+                                            # Example: (assumes you have an index variable in the for loop)
+                                            yolo_conf_val = float(confs[i])  # replace `i` with your loop index variable
+                                    except Exception:
+                                        yolo_conf_val = None
+
+                                    # Pass yolo_conf and face similarity to DB
+                                    success = att_manager.mark_attendance(name, yolo_conf=yolo_conf_val, deepface_dist=similarity)
+
+
+                                    # success = att_manager.mark_attendance(name)
                                     if success:
                                         tracked_faces[pid]['last_confirmed'] = now_ts
                                 # reset match_count after marking
